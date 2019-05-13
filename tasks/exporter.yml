@@ -19,14 +19,14 @@
 - name: ensure nginx-exp directory exists
   become: true
   file:
-    path: /tmp/nginx-exp
+    path: /usr/local/bin/nginx-prometheus-exporter
     state: directory
 - name: Extract nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
   become: true
   unarchive:
     src: /tmp/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
     remote_src: true
-    dest: /tmp/nginx-exp
+    dest: /usr/local/bin/nginx-prometheus-exporter
 - name: Copies the nginx_exporter.service template
   template:
     src: files/nginx_exporter.service.j2
