@@ -54,5 +54,4 @@
         allow 127.0.0.1;
         deny all;
       }
-#TODO: Include exporter.yml
 - import_playbook: exporter.yml
