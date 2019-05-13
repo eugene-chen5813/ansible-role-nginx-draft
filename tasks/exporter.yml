@@ -21,7 +21,8 @@
   unarchive:
     src: /tmp/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
     dest: /tmp/nginx-exp
-- template:
+- name: Copies the nginx_exporter.service tempalte
+  template:
     src: files/nginx_exporter.service.j2
     dest: /etc/systemd/system/nginx_exporter.service
     owner: root
