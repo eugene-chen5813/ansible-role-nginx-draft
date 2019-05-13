@@ -1,10 +1,9 @@
 ---
-- import_playbook: exporter.yml
+- import_tasks: exporter.yml
 - name: setup nginx rpm key
   become: true
   rpm_key:
     key: "{{ nginx_signing_key }}"
-
 
 - name: add nginx repository
   become: true
