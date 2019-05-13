@@ -19,7 +19,8 @@
 - name: Extract nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
   become: true
   unarchive:
-    remote_src: /tmp/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
+    src: /tmp/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
+    remote_src: true
     dest: /tmp/nginx-exp
 - name: Copies the nginx_exporter.service template
   template:
