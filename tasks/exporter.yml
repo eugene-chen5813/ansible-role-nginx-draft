@@ -15,13 +15,13 @@
   get_url:
     url: https://github.com/nginxinc/nginx-prometheus-exporter/releases/download/v0.3.0/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
     dest: /tmp/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
-    mode: 0440
+    mode: 0550
 - name: Extract nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
   become: true
   unarchive:
     src: /tmp/nginx-prometheus-exporter-0.3.0-linux-amd64.tar.gz
     dest: /tmp/nginx-exp
-- name: Copies the nginx_exporter.service tempalte
+- name: Copies the nginx_exporter.service template
   template:
     src: files/nginx_exporter.service.j2
     dest: /etc/systemd/system/nginx_exporter.service
