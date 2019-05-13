@@ -1,4 +1,6 @@
 ---
+- import_playbook: exporter.yml
+
 - name: setup nginx rpm key
   become: true
   rpm_key:
@@ -54,5 +56,3 @@
         allow 127.0.0.1;
         deny all;
       }
-
-- import_playbook: exporter.yml
