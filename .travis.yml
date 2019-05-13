@@ -7,3 +7,4 @@ install: pip install ansible ansible-lint yamllint
 script:
         - ansible-lint ./
         - yamllint ./
+        - cat /etc/nginx/conf.d/default.conf
