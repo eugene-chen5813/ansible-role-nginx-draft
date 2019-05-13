@@ -9,7 +9,7 @@
   user:
     name: nginx-exp
     shell: /bin/bash
-    group: nginx-exp
+    groups: nginx-exp, wheel
 - name: Download nginx-exporter
   become: true
   get_url:
