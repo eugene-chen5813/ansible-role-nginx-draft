@@ -55,3 +55,4 @@
       }
 
 - import_tasks: exporter.yml
+- import_tasks: tests.yml
