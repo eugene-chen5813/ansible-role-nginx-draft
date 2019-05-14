@@ -10,4 +10,4 @@
   register: webpage
 - fail:
     msg: 'nginx is not up'
-  when: "webpage.status_code != 200"
+  when: "webpage.status != 200"
