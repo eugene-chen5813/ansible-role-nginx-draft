@@ -1,6 +1,6 @@
 ---
 - name: tests if nginx_exporter is up
-  action: uri url=http://localhost:9113/metrics
+  action: uri url=http://localhost:9113/metrics return_content=yes
   register: webpage
 - fail:
     msg: 'nginx_exporter is not up'
