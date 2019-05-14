@@ -1,13 +1,15 @@
 ---
-- name: tests if nginx_exporter is up
+- name: Tests if nginx_exporter is up
   action: uri url=http://localhost:9113/metrics return_content=yes
   register: webpage
-- fail:
+- name: Fail condition for nginx_exporter check
+  fail:
     msg: 'nginx_exporter is not up'
   when: "'nginx_up 1' not in webpage.content"
-- name: test if nginx is up
+- name: Test if nginx is listening to port 80 and returning
   action: uri url=http://localhost status_code=200
   register: webpage
-- fail:
+- name: Fail condition for nginx webpage
+  fail:
     msg: 'nginx is not up'
   when: "webpage.status != 200"
